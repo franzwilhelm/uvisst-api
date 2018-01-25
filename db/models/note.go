@@ -11,6 +11,7 @@ type Note struct {
 	ID        int       `json:"id"`
 	CreatedAt time.Time `json:"createdAt"`
 	Data      string    `json:"data"`
+	Emoji     string    `json:"emoji"`
 }
 
 // GetAllNotes ...
