@@ -25,7 +25,7 @@ func main() {
 		}
 	}()
 
-	if err := db.Connect("postgres", "host=localhost user=uvisst password=uvisst123 dbname=uvisst sslmode=disable"); err != nil {
+	if err := db.Connect("postgres", "host=localhost port=5433 user=uvisst password=uvisst123 dbname=uvisst sslmode=disable"); err != nil {
 		log.Fatal(err)
 	}
 	if err := models.Migrate(); err != nil {

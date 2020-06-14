@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/franzwilhelm/uvisst-api/db/models"
@@ -28,9 +27,8 @@ func AddNote(w http.ResponseWriter, r *http.Request) {
 		response(w, 400, "note data required")
 		return
 	}
-	log.Print(note)
-	err := note.Create()
-	if err != nil {
+
+	if err := note.Create(); err != nil {
 		response(w, 500, err.Error())
 		return
 	}
